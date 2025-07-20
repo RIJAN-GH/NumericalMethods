@@ -1,3 +1,4 @@
+# Composite Simpson 1/3 Rule
 def f(x):
     return 1 + x**3
 
@@ -9,8 +10,10 @@ n = int(input("Enter number of strips (n): "))
 h = (b - a) / n
 I = f(a) + f(b)
 for i in range(1, n):
-    I += 2*f(a + i*h)
+    if(i%2 == 0):
+        I += 2*f(a + i*h)
+    
+    else: 
+        I += 4*f(a + i*h)
 
-I = (h / 2) * I
-
-print("Result using Composite Trapezoidal Rule:", I)
+print("Composite Simpson 1/3 result:", I*(h/3))

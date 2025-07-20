@@ -1,4 +1,4 @@
-# Simple Trapezoidal Rule
+# Simple Simpson 1/3 Rule
 def f(x):
     return 1 + x**3
 
@@ -6,7 +6,7 @@ def f(x):
 a = float(input("Enter lower limit: "))
 b = float(input("Enter upper limit: "))
 
-h = b - a
-I = (h / 2) * (f(a) + f(b))
+h = (b - a)/2
+I = h/3 * (f(a) + 4*f((a+b)/2) + f(b))
 
-print("Result using Simple Trapezoidal Rule:", I)
+print("Simple Simpson 1/3 result:", I)
